@@ -34,4 +34,10 @@
     margin-top: 10px;
     padding:5px 15px;
     border-radius: 5px;
+    border: 1px solid;
+    font-weight: 600;
+}
+
+.product__rating{
+    display: flex;
 }
