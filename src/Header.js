@@ -6,7 +6,7 @@ function Header() {
     <div className="header">
       <img
         className="header__logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+        src="https://jitsvinger.co.za/wp-content/uploads/2018/04/Amazon-Logo-1024x373.png"
         alt="Amazon Logo"
       />
 
