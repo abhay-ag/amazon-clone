@@ -1,9 +1,11 @@
+import { BallotSharp } from '@material-ui/icons';
 import React from 'react';
 import  './Product.css';
 import { useStateValue } from './StateProvider';
 
 function Product({id,title, price, image, rating}) {
     const [{basket}, dispatch] = useStateValue();
+    console.log(basket)
 
     const addToBasket = () =>{
         // Dispatch the item into the data layer
