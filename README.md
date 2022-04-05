@@ -4,6 +4,8 @@ This repo marks the start of a journey where I learn `react.js` 🎯
 
 ## **About the project**
 
+>> READ NOTES.JS FOR THE UNDERSTANDING OF HOW EACH JS FILE WORKS
+
 > Amazon Clone
 ## To run the app 💨
 ---
@@ -26,4 +28,10 @@ This repo marks the start of a journey where I learn `react.js` 🎯
 ---
 - [ ] Add a payment gateway
 - [ ] Allow user to reset password via E-Mail
-- [ ] Add products dynammically 
+
+***
+---
+
+### **Feel free to contact me**
+
+>E-mail at avonabhay@gmail.com
