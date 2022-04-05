@@ -1,7 +1,6 @@
-import BasketItem from "./BasketItem";
-
 export const initialState = {
-    basket: []
+    basket: [],
+    user: null
 };
 
 const reducer = (state = { basket: []}, action) =>{
@@ -24,6 +23,11 @@ const reducer = (state = { basket: []}, action) =>{
                     ...state.basket,
                     basket: newBasket
                 }
+        case 'SET_USER':
+            return{
+                ...state,
+                user: action.user
+            }
         default:
             return state
     }
