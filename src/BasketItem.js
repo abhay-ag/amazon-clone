@@ -29,7 +29,7 @@ function BasketItem({id, image, title, price, rating, hideButton}) {
                     ))
                 }
             </div>
-            <button onClick={removeFromBasket}>Remove from basket</button>
+            {!hideButton && (<button onClick={removeFromBasket}>Remove from basket</button>)}
         </div>
     </div>
   )
