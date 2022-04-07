@@ -4,3 +4,22 @@
 .orders > h1{
     margin: 30px 0;
 }
+.logBtn{
+    background: #f0c14b;
+    border-radius: 2px;
+    width: 30%;
+    height: 50px;
+    outline: none;
+    border: 1px solid;
+    font-weight: bolder;
+    border-radius: 10px;
+    margin-top: 50px;
+    font-size: 2rem;
+    color: #111;
+}
+.orders__loggedOut > h1{
+    font-size: 5rem;
+}
+.orders__loggedOut > h3{
+    font-size: 2.5rem;
+}

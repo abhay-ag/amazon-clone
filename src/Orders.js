@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { db } from './firebase'
 import Order from './Order'
 import './Orders.css'
@@ -26,7 +27,16 @@ function Orders() {
     }, [user])
   return (
     <div className="orders">
-        <h1>Your orders</h1>
+        {user && <h1>Your orders</h1>}
+        {!user && <div>
+            <div className="orders__loggedOut">
+                <h1>You are not logged in!!</h1>
+                <h3>Please login to view your orders!</h3>
+                <Link to= '/login'>
+                    <button className='logBtn'>Login</button>
+                </Link>
+            </div>
+        </div>}
         <div className="orders__order">
             {orders?.map(order => (
                 <Order order = {order} />

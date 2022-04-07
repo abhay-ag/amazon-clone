@@ -15,7 +15,7 @@ import Orders from './Orders';
 const promise = loadStripe('pk_test_51KlrHFSAgcLd4ctWvDXlSdlRh3vR5WURxdgSUZEJvaanAfh7DBpcpBYDndJK5J8zvEpOHVB89F5wHM9xsQwcGX3w00j3HkKZAC');
 
 function App() {
-  const [{}, dispatch] = useStateValue();
+  const [{basket, user}, dispatch] = useStateValue();
 
   useEffect(() =>{
     // Will only run once when the app compnent loads...
