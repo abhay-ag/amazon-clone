@@ -2,7 +2,7 @@ import React from 'react'
 import './BasketItem.css'
 import { useStateValue } from './StateProvider'
 
-function BasketItem({id, image, title, price, rating}) {
+function BasketItem({id, image, title, price, rating, hideButton}) {
     const [{basket}, dispatch] = useStateValue();
 
     const removeFromBasket = ()=>{
