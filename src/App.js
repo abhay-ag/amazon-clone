@@ -10,6 +10,7 @@ import { useStateValue } from './StateProvider';
 import Payment from './Payment';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import Orders from './Orders';
 
 const promise = loadStripe('pk_test_51KlrHFSAgcLd4ctWvDXlSdlRh3vR5WURxdgSUZEJvaanAfh7DBpcpBYDndJK5J8zvEpOHVB89F5wHM9xsQwcGX3w00j3HkKZAC');
 
@@ -42,6 +43,7 @@ function App() {
           <Routes>
             <Route path='/login' element = {[<Login/>]} />
             <Route path='/checkout' element = {[<Header />, <Checkout />]} />
+            <Route path='/orders' element = {[<Header />, <Orders />]} />
             <Route path='/payment' element = {[<Header />, <Elements stripe={promise}><Payment /></Elements>]} />
             <Route path='/' element = {[<Header />, <Home />]} />           {/* Gets rendered out everytime rather the path is not specified */}
           </Routes>
