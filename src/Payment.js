@@ -1,11 +1,46 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useStateValue } from './StateProvider';
 import './Payment.css'
 import BasketItem from './BasketItem';
 import { Link } from 'react-router-dom';
+import { useElements, useStripe, CardElement } from '@stripe/react-stripe-js';
+import CurrencyFormat from 'react-currency-format';
+import { getBasketTotal } from './reducer';
 
 function Payment() {
-    const [{basket, user}, dispatch] = useStateValue();
+  const [{basket, user}, dispatch] = useStateValue();
+
+  const stripe = useStripe();
+  const elements = useElements();
+
+  const [succeeded, setSucceeded] = useState(false)
+  const [processing, setProcessing] = useState("")
+  const [error, setError] = useState(null);
+  const [disabled, setDisabled] = useState(true);
+  const [clientSecret, setClientSecret] = useState(true);
+
+  useEffect(() => {
+    // generate a special stripe secret which allows us to charge a customer
+    const getClientSecret = async () =>{
+        const response = await axios
+    }
+    getClientSecret();
+  }, [basket])
+  
+
+  const handleSubmit = async (event) => {
+    // Stripe stuff
+    event.preventDefault();
+    setProcessing(true);
+
+    // const payload = await stripe
+  }
+  const handleChange = event =>{
+    // listen for changes in card element
+    // display the error as the customer types
+    setDisabled(event.empty);
+    setError(event.error ? event.error.message : "")
+  }
   return (
     <div className="payment">
        <div className="payment__container">
@@ -48,6 +83,27 @@ function Payment() {
                 </div>
                 <div className="payment__details">
                     {/* Stripe is used for card management */}
+                    <form onSubmit={handleSubmit}>
+                        <CardElement onChange={handleChange}/>
+                        <div className="payment__priceContainer">
+                            <CurrencyFormat
+                            renderText={(value) =>(
+                                <>
+                                    <h3>Order Total: {value}</h3>
+                                </>
+                            )}
+                            decimalScale = {2}
+                            value = {getBasketTotal(basket)}
+                            displayType = {"text"}
+                            thousandSeparator = {true}
+                            prefix = {'$'}
+                            />
+                            <button disabled = {processing || disabled || succeeded}>
+                                <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+                            </button>
+                        </div>
+                        {error && <div>{error}</div>}
+                    </form>
                 </div>
            </div>
         </div> 

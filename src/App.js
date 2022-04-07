@@ -42,7 +42,7 @@ function App() {
           <Routes>
             <Route path='/login' element = {[<Login/>]} />
             <Route path='/checkout' element = {[<Header />, <Checkout />]} />
-            <Route path='/payment' element = {[<Header />, <Payment />]} />
+            <Route path='/payment' element = {[<Header />, <Elements stripe={promise}><Payment /></Elements>]} />
             <Route path='/' element = {[<Header />, <Home />]} />           {/* Gets rendered out everytime rather the path is not specified */}
           </Routes>
         </div>
