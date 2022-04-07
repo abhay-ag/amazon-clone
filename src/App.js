@@ -8,6 +8,10 @@ import { useEffect } from 'react';
 import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
 import Payment from './Payment';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+
+const promise = loadStripe('pk_test_51KlrHFSAgcLd4ctWvDXlSdlRh3vR5WURxdgSUZEJvaanAfh7DBpcpBYDndJK5J8zvEpOHVB89F5wHM9xsQwcGX3w00j3HkKZAC');
 
 function App() {
   const [{}, dispatch] = useStateValue();
