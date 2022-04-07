@@ -28,7 +28,7 @@ const reducer = (state = { basket: []}, action) =>{
                 }
 
                 return{
-                    ...state.basket,
+                    ...state,
                     basket: newBasket
                 };
         case 'SET_USER':
